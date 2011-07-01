@@ -1,0 +1,72 @@
+/* 01. BACKGROUND COLORS */
+
+/* overall background color */
+html, #sidebar h3 span {
+	background-color:#1B1C1F;
+	}
+
+/* background color for the main content area */
+#content, .tabs-container {
+	background-color:#f8f8f8;
+	}
+
+/* background color for the form submit buttons */
+button {
+	background-color:#819F45;
+	}
+
+
+/* 02. TEXT COLORS */
+
+/* intro text  */
+#intro-inner p {
+	color:#EFF7FF;
+	}
+	
+/* titles of the features list */
+#intro-inner li strong {
+	color:#EFF7FF;
+	}
+
+/* descriptions of the features list */
+#intro-inner li {
+	color:#B3B9BF;
+	}
+
+/* navigation links */
+#navigation li a {
+	color:#ccc;
+	}
+
+#navigation li a:hover {
+	color:#91A7BC;
+	}
+
+/* headers in the main content */
+h2 {
+	color:#333;
+	}
+
+h3 {
+	color:#333;
+	}
+
+/* text color in the main content */
+#content {
+	color:#393D40;
+	}
+
+/* links in the main content */
+a {
+	color:#393D40;
+	}
+
+/* headers in the sidebar */
+#sidebar h3 {
+	color:#A8BCCF;
+	}
+
+/* text and links in the sidebar  */
+#sidebar, #sidebar a {
+	color:#aaa;
+	}
