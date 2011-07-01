@@ -1,0 +1,140 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:gravity="center_horizontal"
+	android:padding="18dp">
+	
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingBottom="10dp">
+	
+		<TextView
+			android:text="Drop and Give Me"
+			android:textSize="11pt"
+			android:typeface="sans"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"/>
+	</LinearLayout>
+	
+	<TableLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:stretchColumns="*">
+		
+		<TableRow
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+			
+			<Button
+				android:onClick="showTrainingHome"
+				android:text="Training"
+				android:textSize="9pt"
+				android:background="@drawable/dagm_titlebar_bg"
+				android:layout_width="fill_parent"
+				android:layout_height="75dp"
+				android:layout_span="3"
+				android:paddingLeft="9dp"
+				android:paddingTop="9dp"
+				android:paddingBottom="18dp"
+				android:gravity="left"/>
+			
+		</TableRow>
+		
+		<TableRow
+			android:layout_marginTop="18dp"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+		
+			<Button
+				android:onClick="showChallengeHome"
+				android:text="Challenges"
+				android:textSize="9pt"
+				android:background="@drawable/dagm_button_bg"
+				android:layout_width="0dp"
+				android:layout_height="100dp"
+				android:layout_weight=".5"
+				android:paddingLeft="9dp"
+				android:paddingRight="9dp"
+				android:paddingTop="9dp"
+				android:paddingBottom="18dp"
+				android:gravity="center_horizontal"/>
+			
+			<View
+				android:layout_weight="0.05"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"/>
+				
+			<Button
+				android:text="Challenge a Friend"
+				android:textSize="9pt"
+				android:background="@drawable/dagm_button_bg"
+				android:layout_width="0dp"
+				android:layout_height="100dp"
+				android:layout_weight=".5"
+				android:paddingLeft="9dp"
+				android:paddingRight="9dp"
+				android:paddingTop="9dp"
+				android:paddingBottom="18dp"
+				android:gravity="center_horizontal"/>
+			
+		</TableRow>
+	</TableLayout>
+	
+	<!-- 
+	<Button 
+		android:id="@+id/dagm_home_training"
+		android:text="Training"
+		android:textSize="9pt"
+		android:gravity="left"
+		android:background="@drawable/dagm_button_bg"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingLeft="10dp"
+		android:paddingTop="10dp"
+		android:paddingBottom="20dp"
+		android:layout_span="2"/>
+	
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingBottom="10dp">
+	
+	</LinearLayout>
+	
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingBottom="10dp">
+	
+		
+		<Button 
+			android:id="@+id/dagm_home_challenge"
+			android:text="Challenge Yourself"
+			android:textSize="9pt"
+			android:gravity="left"
+			android:background="@drawable/dagm_button_bg"
+			android:layout_width=""
+			android:layout_height="wrap_content" />
+		<Button
+			android:id="@+id/dagm_home_friend"
+			android:text="Challenge a Friend"
+			android:textSize="9pt"
+			android:gravity="left"
+			android:background="@drawable/dagm_button_bg"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"/>
+
+	</LinearLayout>
+
+	<TextView 
+		android:text="Your Challenges"
+		android:gravity="center"
+		android:background="@drawable/dagm_titlebar_bg"
+		android:textColor="#000000"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"/>
+	 	-->	
+	
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:text="Drop and Give Me"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:gravity="left"
+    android:textSize="12pt"
+    android:textColor="#000000"
+    android:textStyle="bold"
+    android:paddingTop="9px"
+    android:paddingBottom="9px"
+    android:paddingLeft="4px"
+    android:background="@drawable/dagm_titlebar_bg"/>
