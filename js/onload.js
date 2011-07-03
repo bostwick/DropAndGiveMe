@@ -13,7 +13,7 @@ $(document).ready(function() {
 		fade: false,
 		html: true,
 		// Text on the buy button tooltip:
-		fallback: "$1.99 on the App Store <span>Version 1.4 requires iOS 4.3 or later. Works on iPhone and iPod Touch.</span>"
+		fallback: "Free on the Android Market <span>Requires Android 2.1 or higher</span>"
 	});
 
 	// Newsletter default text
