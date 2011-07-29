@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+  
+  	<TextView
+  		android:id="@+id/dagm_friendconfirm_titlebar"
+		android:text="It's On!"
+		android:textSize="11pt"
+		android:typeface="sans"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/dagm_titlebar_bg2"
+		android:textColor="#000000"
+		android:padding="5dp"
+		android:paddingBottom="20dp"/>
+	
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="1dip"
+        android:layout_weight="1"
+		android:fillViewport="true">
+		
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:gravity="center">
+			
+			<TextView 
+				android:text="You are about to challenge Stephen Intille to:" 
+				android:id="@+id/dagm_friendconfirm_title" 
+				android:textSize="10pt"
+				android:textStyle="bold"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:paddingBottom="20dp"/>
+				
+			<TextView 
+				android:text="10 Pushups for time" 
+				android:id="@+id/dagm_friendconfirm_description" 
+				android:textSize="8pt"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:paddingBottom="20dp"/>
+		</LinearLayout>
+	</ScrollView>
+		
+	<TextView 
+		android:text="Are You Ready?" 
+		android:textSize="8pt"
+		android:textStyle="bold"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:paddingBottom="5dp"/>
+	
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:paddingBottom="9dp"
+		android:orientation="vertical"
+		android:paddingLeft="8dp"
+		android:paddingRight="8dp">
+		
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:orientation="vertical"
+			android:paddingLeft="55dp"
+			android:paddingRight="55dp">
+
+		
+		<Button
+			android:onClick="onGoClicked"
+			android:text="Start Challenge!"
+			android:textSize="9pt"
+			android:background="@drawable/dagm_go_button_bg"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingTop="9dp"
+			android:paddingBottom="9dp"
+			android:layout_marginBottom="12dp"/>
+		</LinearLayout>
+	</LinearLayout>
+		
+</LinearLayout>

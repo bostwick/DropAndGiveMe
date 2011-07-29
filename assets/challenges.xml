@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DropAndGiveMe>
+	<Challenge id="1" level="1" timeDir="up">
+		<Title>10 Pushups for time</Title>
+		<Description>Do ten pushups as fast as you can!</Description>
+		<Round>
+			<Exercise type="pushup" reps="10"/>
+		</Round>
+	</Challenge>
+	
+	<Challenge id="2" level="1" timeDir="down">
+		<Title>30 sec max rep pushups</Title>
+		<Description>With 30 seconds on the clock, do as many pushups as you can!</Description>
+		<Round>
+			<Exercise type="pushup" time="30"/>
+		</Round>
+	</Challenge>
+	
+	<Challenge id="3" level="1" timeDir="up">
+	<Title>30 sec of 25RPM max rep pushups </Title>
+	<Description>Do 30 seconds of pushups with at least 25 RPM. If you are too slow, you'll lose!</Description>
+		<Round>
+			<Exercise type="pushup" time="30" speed="25"/>
+		</Round>
+	</Challenge>
+
+	<Challenge id="4" level="2" timeDir="up">
+		<Title>20 Pushups for time</Title>
+		<Description>Do twenty pushups as fast as possible.</Description>
+		<Round>
+			<Exercise type="pushup" reps="20"/>
+		</Round>
+	</Challenge>
+	
+	<Challenge id="5" level="2" timeDir="down">
+		<Title>1 min of 30 RPM minimum speed pushups</Title>
+		<Description>Do as many pushups in 1 minute as you can. If you go below the minimum speed of 30 RPM during the minute, you lose!</Description>
+		<Round>
+			<Exercise type="pushup" time="60" speed="30"/>
+		</Round>
+	</Challenge>
+	
+	<Challenge id="6" level="3"  timeDir="down">
+		<Title>Tabata pushups</Title>
+		<Description>Interval pushups. Do as many as you can in 20 seconds, and rest for 10 seconds. Repeat four times. The total number of pushups you do will count towards your score!</Description>
+		<Round>
+			<Exercise type="pushup" time="20"/>
+			<Exercise type="rest" time="10"/>
+		</Round>
+		<Round>
+			<Exercise type="pushup" time="20"/>
+			<Exercise type="rest" time="10"/>
+		</Round>
+		<Round>
+			<Exercise type="pushup" time="20"/>
+			<Exercise type="rest" time="10"/>
+		</Round>
+		<Round>
+			<Exercise type="pushup" time="20"/>
+		</Round>
+	</Challenge>
+	
+	<Challenge id="7" level="3" timeDir="up">
+		<Title>Pushup Ladder 1</Title>
+		<Description>You'll do five pushups in the first round, rest 20 seconds, ten pushups in the second round, rest 40 seconds, 15 pushups the third round. Do them as fast as possible to score higher</Description>
+		<Round>
+			<Exercise type="pushup" reps="5"/>
+			<Exercise type="rest" time="20"/>
+		</Round>
+		<Round>
+			<Exercise type="pushup" reps="10"/>
+			<Exercise type="rest" time="40"/>
+		</Round>
+		<Round>
+			<Exercise type="pushup" reps="15"/>
+		</Round>
+	</Challenge>
+	
+	<Challenge id="8" level="4" timeDir="up">
+		<Title>50 Pushups for time</Title>
+		<Description>Do fifty pushups as fast as possible.</Description>
+		<Round>
+			<Exercise type="pushup" reps="50"/>
+		</Round>
+	</Challenge>
+	
+	<Challenge id="9" level="4" timeDir="up">
+		<Title>Pushup Ladder 2</Title>
+		<Description>You'll do five pushups in the first round, rest 20 seconds, ten pushups in the second round, rest 40 seconds, 15 pushups the third round, rest 1 minute, and 20 pushups the fourth round. Do them as fast as possible to score higher</Description>
+		<Round>
+			<Exercise type="pushup" reps="5"/>
+			<Exercise type="rest" time="20"/>
+		</Round>
+		<Round>
+			<Exercise type="pushup" reps="10"/>
+			<Exercise type="rest" time="40"/>
+		</Round>
+		<Round>
+			<Exercise type="pushup" reps="15"/>
+			<Exercise type="rest" time="60"/>
+		</Round>
+		<Round>
+			<Exercise type="pushup" reps="20"/>
+		</Round>
+	</Challenge>
+	
+	<Challenge id="10" level="5" timeDir="up">
+		<Title>3 min of 50RPM max rep pushups </Title>
+		<Description>Do 3 minutes of pushups with at least 50 RPM. If you are too slow, you'll lose!</Description>
+		<Round>
+			<Exercise type="pushup" time="180" speed="50"/>
+		</Round>
+	</Challenge>
+	
+	<Challenge id="11" level="5" timeDir="up">
+		<Title>100 pushups for time</Title>
+		<Description>Do 100 pushups as fast as possible</Description>
+		<Round>
+			<Exercise type="pushup" reps="100"/>
+		</Round>
+	</Challenge>
+	
+</DropAndGiveMe>
