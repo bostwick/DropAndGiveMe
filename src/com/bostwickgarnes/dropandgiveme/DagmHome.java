@@ -5,27 +5,34 @@ import java.util.Map;
 import com.bostwickgarnes.dropandgiveme.R;
 import android.app.TabActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 
 public class DagmHome extends TabActivity {
 	private static final String TAG = "DagmHome";
-		
+	
 	private final int challengeList = R.id.dagm_home_challengelist;
 	private final int trainingList	= R.id.dagm_home_traininglist;
 	private final int activityList	= R.id.dagm_home_activitylist;
 	private final int activityContainer = R.id.dagm_home_activitycontainer;
-	  
+	private final int settingsContainer = R.id.dagm_home_settingscontainer;
+	 
 	private TabHost m_tabHost;
 	private ChallengeData m_challengeData;
 	private EventData m_eventData;
+	private SettingsData m_settingsData;
 	
 	private OnItemClickListener onChallengeClicked = new OnItemClickListener() {
 		@Override
@@ -91,8 +98,10 @@ public class DagmHome extends TabActivity {
 		  
 		m_challengeData = ChallengeData.getInstance(this);
 		m_eventData		= EventData.getInstance(this);
+		m_settingsData 	= new SettingsData(this);
 		  
 		initializeTabHost();
+		initSettings();
 		populateLists();
 		showNextChallenges();
 	}
@@ -108,6 +117,56 @@ public class DagmHome extends TabActivity {
 		m_tabHost.addTab(m_tabHost.newTabSpec("activitylist")
 				.setIndicator("Activity", getResources().getDrawable(R.drawable.dagm_check))
 				.setContent(activityContainer));
+		m_tabHost.addTab(m_tabHost.newTabSpec("settings")
+				.setIndicator("Settings", getResources().getDrawable(R.drawable.dagm_wrench))
+				.setContent(settingsContainer));
+	}
+	
+	/**
+	 * Get the settings values from shared preferences, set the checkboxes with the values,
+	 * and register listeners for change on the checkboxes
+	 */
+	protected void initSettings(){
+		boolean encouragement = m_settingsData.getSettingValue(SettingsData.ENCOURAGEMENT_SETTING, true);
+		boolean soundEffects = m_settingsData.getSettingValue(SettingsData.SOUND_EFFECTS_SETTING, true);
+
+		initSettingCheckbox(R.id.dagm_settings_encouraging, encouragement, SettingsData.ENCOURAGEMENT_SETTING);
+		initSettingCheckbox(R.id.dagm_settings_sound_effects, soundEffects, SettingsData.SOUND_EFFECTS_SETTING);
+	}
+	
+	/**
+	 * This listener will save the preference with the key given whenever the checkbox is changed.
+	 */
+	private class SettingsOnCheckedChangeListener implements OnCheckedChangeListener {
+
+		private String m_sharedPrefsKey;
+		
+		public SettingsOnCheckedChangeListener(String sharedPrefsKeyString){
+			m_sharedPrefsKey = sharedPrefsKeyString;
+		}
+		
+		@Override
+		public void onCheckedChanged(CompoundButton buttonView,
+				boolean isChecked) {
+			m_settingsData.putSettingValue(m_sharedPrefsKey, isChecked);
+		}
+		
+	}
+	
+	/**
+	 * Set the checkbox checked to the given value, and create a listener that will save the value
+	 * of the checkbox when it is changed
+	 * @param id The id of the checkbox to set
+	 * @param value The value to set the checkbox to
+	 * @param sharedPrefsKey The key of the shared preference to get
+	 */
+	protected void initSettingCheckbox(int id, boolean value, String sharedPrefsKey){
+		
+		CheckBox checkBox = (CheckBox)findViewById(id);
+
+		checkBox.setChecked(value);
+		
+		checkBox.setOnCheckedChangeListener(new SettingsOnCheckedChangeListener(sharedPrefsKey));
 	}
 	
 	protected void populateLists() {

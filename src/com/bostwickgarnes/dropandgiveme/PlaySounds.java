@@ -13,10 +13,16 @@ public class PlaySounds {
 	private MediaPlayer m_player = new MediaPlayer();
 	
 	private Context m_context;
+	
+	private boolean m_isEnabled = true;
 
 	public PlaySounds(Context context) {
 		m_context = context;
-		
+	}
+	
+	public PlaySounds(Context context, boolean isEnabled){
+		m_context = context;
+		m_isEnabled = isEnabled;
 	}
 
 	
@@ -24,8 +30,16 @@ public class PlaySounds {
 		return 0;	// don't care
 	}
 	
+	public void setEnabled(boolean enabled){
+		this.m_isEnabled = enabled;
+	}
+	
 	
 	public void play(int resourceID) {
+		
+		// if this instance is disabled, do not play a sound
+		if(!m_isEnabled) {return;}
+		
 		AssetFileDescriptor afd = m_context.getResources().openRawResourceFd(resourceID);
 
 	    try

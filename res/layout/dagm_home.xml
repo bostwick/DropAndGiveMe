@@ -40,6 +40,8 @@
             	android:layout_height="fill_parent"/>
 
 			<include layout="@layout/dagm_activity_tab"/>
+			
+			<include layout="@layout/dagm_settings_tab"/>
 		</FrameLayout>
 	</LinearLayout>
 </TabHost>

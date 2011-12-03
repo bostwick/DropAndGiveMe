@@ -11,6 +11,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,6 +30,7 @@ public class PlayChallenge extends Activity implements OnInitListener {
 	private static final String WAKELOCK_TAG = "DAGM_WAKELOCK";
 	private static final String BUNDLE_CHALLENGEPLAYER = "m_challengePlayer";
 	private static final int DIALOG_PUSHUP_CHEATING = 1;
+	
 	
 	/**
 	 * Required Intent Extra that specifies which challenge to
@@ -61,7 +63,11 @@ public class PlayChallenge extends Activity implements OnInitListener {
 	
 	private boolean m_isTraining = false;
 	
+	private boolean m_playEncouragement = true;
+	private boolean m_playSoundEffects = true;
+	
 	private ChallengeData m_challengeData;
+	private SettingsData m_settingsData;
 	
 	/*****************************
 	 * Text to Speech Fields
@@ -93,7 +99,7 @@ public class PlayChallenge extends Activity implements OnInitListener {
 
     //////////////////////////////////////////////////// End of Text To Speech Fields.
     
-    PlaySounds m_playSounds = new PlaySounds(this);
+    PlaySounds m_playSounds = new PlaySounds(this, m_playSoundEffects);
 	
 	/**
 	 * OnClick Handler for the target
@@ -169,6 +175,9 @@ public class PlayChallenge extends Activity implements OnInitListener {
     private void playMotivation(){
     	// make sure m_tts is not null
     	if(m_tts == null){return;}
+    	
+    	// if the setting for playing encouragement is set to false, do not play anything
+    	if(!m_playEncouragement) {return;}
     	
     	// Select a random hello.
         int motivationsLength = MOTIVATIONS.length;
@@ -259,8 +268,11 @@ public class PlayChallenge extends Activity implements OnInitListener {
       setContentView(R.layout.dagm_playchallenge);
       
       m_challengeData = ChallengeData.getInstance(this);
+      m_settingsData = new SettingsData(this);
       
       detectTrainingChallenge();
+      
+      loadSettings();
       
       // this makes it so that the volume buttons on the phone 
       // adjust the media volume instead of the ring volume while
@@ -296,6 +308,14 @@ public class PlayChallenge extends Activity implements OnInitListener {
             // Initialization failed.
             Log.e(TAG, "Could not initialize TextToSpeech.");
         }
+    }
+    
+    // Initialize the settings needed for this activity
+    private void loadSettings(){
+		m_playEncouragement = m_settingsData.getSettingValue(SettingsData.ENCOURAGEMENT_SETTING, true);
+		m_playSoundEffects = m_settingsData.getSettingValue(SettingsData.SOUND_EFFECTS_SETTING, true);
+		
+		m_playSounds.setEnabled(m_playSoundEffects);
     }
 	
 	@Override
